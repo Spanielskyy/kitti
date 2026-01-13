@@ -1,0 +1,6 @@
+{
+    "kitti.bg": -1,
+    "kitti.fg": -1,
+    "kitti.bar.bg": 15,
+    "kitti.bar.fg": 0
+}
