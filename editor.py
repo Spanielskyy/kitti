@@ -55,8 +55,10 @@ class Workspace:
 		self.last_key : int = -1
 
 		self.mode : str | None = None
+		self.modified : bool = False
 
 		self.message : str = ""
+		self.quit : bool = False
 
 
 	@property
@@ -90,6 +92,10 @@ class Workspace:
 
 	def bar_generate(self, bar : str) -> str:
 
+		if self.modified:
+			bar = bar.replace("<modified>", config.config.get("feedback", {}).get("buffer-modified-true", "MODIFIED"))
+		else:
+			bar = bar.replace("<modified>", config.config.get("feedback", {}).get("buffer-modified-false", ""))
 		bar = bar.replace("<dir>", self.dir)
 		bar = bar.replace("<fn>", self.fn)
 		bar = bar.replace("<pos>", str(self.pos))
@@ -138,6 +144,9 @@ class Workspace:
 		self.buffer = self.buffer[:self.pos] + char + self.buffer[self.pos:]
 		self.pos += 1
 		self.set_cached_column()
+		self.adjust_scroll_row()
+		self.modified = True
+		self.message = ""
 
 
 	def action_backspace(self):
@@ -146,6 +155,9 @@ class Workspace:
 		self.buffer = self.buffer[:self.pos - 1] + self.buffer[self.pos:]
 		self.pos -= 1
 		self.set_cached_column()
+		self.adjust_scroll_row()
+		self.modified = True
+		self.message = ""
 
 
 	def action_delete(self):
@@ -153,6 +165,19 @@ class Workspace:
 		if self.pos >= len(self.buffer): return
 		self.buffer = self.buffer[:self.pos] + self.buffer[self.pos + 1:]
 		self.set_cached_column()
+		self.adjust_scroll_row()
+		self.modified = True
+		self.message = ""
+
+
+	def action_tab(self):
+
+		self.buffer = self.buffer[:self.pos] + "\t" + self.buffer[self.pos:]
+		self.pos += 1
+		self.set_cached_column()
+		self.adjust_scroll_row()
+		self.modified = True
+		self.message = ""
 
 
 	def action_write(self):
@@ -164,10 +189,22 @@ class Workspace:
 			size = os.path.getsize(self.fp)
 			size = round(size, 2)
 			size_formatted = format_size(size)
-			self.message = f"Wrote {len(self.buffer)} characters ({size_formatted})"
+			self.message = config.config.get("feedback", {}).get("buffer-write").replace("<buffer-length>", str(len(self.buffer))).replace("<buffer-size>", str(size_formatted))
+			self.modified = False
 
 		except:
-			self.message = f"Failed to write buffer"
+			self.message = config.config.get("feedback", {}).get("buffer-write-fail")
+
+
+	def action_exit(self):
+
+		warning_message = config.config.get("feedback", {}).get("buffer-modified-warning")
+		log(f"{self.message} {warning_message} {self.message == warning_message}")
+		if self.modified and self.message != warning_message:
+			self.message = warning_message
+			return
+
+		self.quit = True
 
 
 	def action_move_left(self):
@@ -175,6 +212,7 @@ class Workspace:
 		if self.pos <= 0: return
 		self.pos -= 1
 		self.set_cached_column()
+		self.adjust_scroll_row()
 
 
 	def action_move_right(self):
@@ -182,6 +220,7 @@ class Workspace:
 		if self.pos >= len(self.buffer): return
 		self.pos += 1
 		self.set_cached_column()
+		self.adjust_scroll_row()
 
 
 	def action_move_up(self):
@@ -189,7 +228,11 @@ class Workspace:
 		row, column = self.pos_to_rc(self.pos)
 		if row == None or column == None: return
 		target_row = row - 1
-		if target_row < 0: return
+		if target_row < 0:
+			self.set_cached_column()
+			self.pos = 0
+			self.adjust_scroll_row()
+			return
 
 		target_length = len(self.buffer.split("\n")[target_row])
 		target_column = min(column, target_length)
@@ -201,6 +244,7 @@ class Workspace:
 		target_pos = self.rc_to_pos((target_row, target_column))
 		if target_pos == None: return
 		self.pos = target_pos
+		self.adjust_scroll_row()
 
 
 	def action_move_down(self):
@@ -208,7 +252,11 @@ class Workspace:
 		row, column = self.pos_to_rc(self.pos)
 		if row == None or column == None: return
 		target_row = row + 1
-		if target_row > len(self.buffer.split("\n")) - 1: return
+		if target_row > len(self.buffer.split("\n")) - 1:
+			self.set_cached_column()
+			self.pos = len(self.buffer)
+			self.adjust_scroll_row()
+			return
 
 		target_length = len(self.buffer.split("\n")[target_row])
 		target_column = min(column, target_length)
@@ -220,3 +268,4 @@ class Workspace:
 		target_pos = self.rc_to_pos((target_row, target_column))
 		if target_pos == None: return
 		self.pos = target_pos
+		self.adjust_scroll_row()

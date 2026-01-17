@@ -32,10 +32,10 @@ def app(screen : curses.window):
 
 		h, w = screen.getmaxyx()
 		workspace.scroll_size_x = w
-		workspace.scroll_size_y = h
+		workspace.scroll_size_y = h - 2
 		screen.clear()
 
-		editor.log(str(workspace.cached_column))
+		#editor.log(str(workspace.cached_column))
 
 		CENTER_LEN = len(workspace.bar_center)
 		RIGHT_LEN = len(workspace.bar_right)
@@ -46,6 +46,7 @@ def app(screen : curses.window):
 		screen.addstr(h - 2, w - RIGHT_LEN - 1, workspace.bar_right, THEME_BAR)
 		screen.addstr(h - 1, 0, workspace.message)
 
+		#editor.log(f"SCROLL_ROW {workspace.scroll_row}")
 		for y in range(h - 2):
 
 			row_id = workspace.scroll_row + y
@@ -53,13 +54,16 @@ def app(screen : curses.window):
 				screen.addstr(y, 0, "~")
 				continue
 
-			screen.addstr(row_id, 0, workspace.rows[row_id])
+			row = workspace.rows[row_id]
+			row = row.replace("\t", " " * editor.config.config.get("tab-size", 4))
+			screen.addstr(y, 0, row)
 
 		cursor_row, cursor_column = workspace.pos_to_rc(workspace.pos)
 		if cursor_row != None and cursor_column != None:
 			try:
 				curses.curs_set(1)
-				screen.move(cursor_row + workspace.scroll_row, cursor_column + workspace.scroll_column)
+				tabcount = workspace.rows[cursor_row][:cursor_column].count("\t")
+				screen.move(cursor_row - workspace.scroll_row, cursor_column - workspace.scroll_column + tabcount * (editor.config.config.get("tab-size", 4) - 1))
 			except curses.error:
 				curses.curs_set(0)
 
@@ -68,12 +72,8 @@ def app(screen : curses.window):
 
 		key = screen.getch()
 		workspace.last_key = key
-		workspace.message = ""
 
-		if key == 23:
-			workspace.action_write()
-
-		elif key == 260:
+		if key == 260:
 			workspace.action_move_left()
 
 		elif key == 261:
@@ -102,12 +102,19 @@ def app(screen : curses.window):
 				elif key == 330:
 					workspace.action_delete()
 
+				elif key == 9:
+					workspace.action_tab()
+
 			case _:
 
 				if key == 24:
-					break
+					workspace.action_exit()
+					if workspace.quit: break
 
 				elif key == 101:
 					workspace.mode = "e"
+
+				elif key == 119:
+					workspace.action_write()
 
 curses.wrapper(app)

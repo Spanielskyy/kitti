@@ -6,7 +6,15 @@ DEFAULT_CONFIG = {
 	"theme": "default",
 	"bar-left": " <mode-full>",
 	"bar-center": "<fn>",
-	"bar-right": "<last-key> "
+	"bar-right": "<modified><last-key> ",
+	"tab-size": 4,
+	"feedback": {
+		"buffer-modified-true": "MODIFIED",
+		"buffer-modified-false": "",
+		"buffer-modified-warning": "WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway.",
+		"buffer-write": "Wrote buffer successfully (<buffer-length> characters, <buffer-size>)",
+		"buffer-write-fail": "Failed to write buffer"
+	}
 }
 
 DEFAULT_THEME = {
