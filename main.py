@@ -35,8 +35,6 @@ def app(screen : curses.window):
 		workspace.scroll_size_y = h - 2
 		screen.clear()
 
-		#editor.log(str(workspace.cached_column))
-
 		CENTER_LEN = len(workspace.bar_center)
 		RIGHT_LEN = len(workspace.bar_right)
 
@@ -46,7 +44,6 @@ def app(screen : curses.window):
 		screen.addstr(h - 2, w - RIGHT_LEN - 1, workspace.bar_right, THEME_BAR)
 		screen.addstr(h - 1, 0, workspace.message)
 
-		#editor.log(f"SCROLL_ROW {workspace.scroll_row}")
 		for y in range(h - 2):
 
 			row_id = workspace.scroll_row + y
@@ -111,7 +108,7 @@ def app(screen : curses.window):
 					workspace.action_exit()
 					if workspace.quit: break
 
-				elif key == 101:
+				elif key in (101, 105):
 					workspace.mode = "e"
 
 				elif key == 119:

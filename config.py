@@ -24,11 +24,11 @@ DEFAULT_THEME = {
 	"kitti.bar.fg": 0
 }
 
-with open("config.json", "r", encoding = "utf8") as source:
+with open("/usr/share/kitti/config.json", "r", encoding = "utf8") as source:
 	config = DEFAULT_CONFIG | json.load(source)
 	source.close()
 
-path = "ext/themes/" + config.get("theme", "default")
+path = "/usr/share/kitti/ext/themes/" + config.get("theme", "default")
 if not os.path.exists(path):
 	theme : dict = DEFAULT_THEME
 else:

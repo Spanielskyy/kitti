@@ -24,7 +24,7 @@ INPUTS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*
 
 
 def log(msg : str):
-	with open("log.txt", "a", encoding = "utf8") as logfile:
+	with open("/usr/share/kitti/log.txt", "a", encoding = "utf8") as logfile:
 		logfile.write(msg + "\n")
 		logfile.close()
 
