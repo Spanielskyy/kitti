@@ -21,7 +21,11 @@ DEFAULT_THEME = {
 	"kitti.bg": -1,
 	"kitti.fg": -1,
 	"kitti.bar.bg": 15,
-	"kitti.bar.fg": 0
+	"kitti.bar.fg": 0,
+	"lang.*.keyword.bg": -1,
+	"lang.*.keyword.fg": 5,
+	"lang.*.string.bg": -1,
+	"lang.*.string.fg": 2
 }
 
 with open("/usr/share/kitti/config.json", "r", encoding = "utf8") as source:

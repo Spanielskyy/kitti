@@ -1,5 +1,6 @@
 import os
 import config
+import syntax
 
 
 WORKSPACE_MODES = {
@@ -60,6 +61,9 @@ class Workspace:
 		self.message : str = ""
 		self.quit : bool = False
 
+		self.lang, self.lang_data = syntax.load_language(self.ext)
+		self.tokens : dict[int, list] = {}
+
 
 	@property
 	def rows(self) -> list[str]:
@@ -76,6 +80,10 @@ class Workspace:
 	@property
 	def fn(self) -> str:
 		return os.path.split(self.fp)[1]
+
+	@property
+	def ext(self) -> str:
+		return os.path.splitext(self.fp)[1]
 
 	@property
 	def bar_left(self) -> str:
@@ -105,6 +113,23 @@ class Workspace:
 		return bar
 
 
+	def generate_tokens(self, row : int):
+
+		if row < 0: return
+		if row > len(self.rows) - 1: return
+		if not self.lang: return
+
+		value = self.rows[row]
+		tokens = syntax.generate_tokens(self.lang_data, row, value)
+
+		if row in self.tokens.keys():
+			self.tokens.get(row).clear()
+			self.tokens.get(row).extend(tokens)
+
+		else:
+			self.tokens[row] = tokens
+
+
 	def set_cached_column(self):
 
 		row, column = self.pos_to_rc(self.pos)
@@ -118,8 +143,10 @@ class Workspace:
 		if row == None or column == None: return
 		if row < self.scroll_row:
 			self.scroll_row = row
+			self.generate_tokens(row)
 		if row > self.scroll_row + self.scroll_size_y - 1:
 			self.scroll_row = row - self.scroll_size_y + 1
+			self.generate_tokens(row - self.scroll_size_y + 1)
 
 
 	def pos_to_rc(self, pos : int) -> tuple[int, int] | tuple[None, None]:
@@ -139,14 +166,22 @@ class Workspace:
 		return len("".join(n + "\n" for n in self.buffer.split("\n")[:rc[0]])) + rc[1]
 
 
+	def modify(self):
+
+		cursor_row, cursor_column = self.pos_to_rc(self.pos)
+		self.set_cached_column()
+		self.adjust_scroll_row()
+		if cursor_row != None:
+			self.generate_tokens(cursor_row)
+		self.modified = True
+		self.message = ""
+
+
 	def action_insert(self, char : str):
 
 		self.buffer = self.buffer[:self.pos] + char + self.buffer[self.pos:]
 		self.pos += 1
-		self.set_cached_column()
-		self.adjust_scroll_row()
-		self.modified = True
-		self.message = ""
+		self.modify()
 
 
 	def action_backspace(self):
@@ -154,30 +189,21 @@ class Workspace:
 		if self.pos == 0: return
 		self.buffer = self.buffer[:self.pos - 1] + self.buffer[self.pos:]
 		self.pos -= 1
-		self.set_cached_column()
-		self.adjust_scroll_row()
-		self.modified = True
-		self.message = ""
+		self.modify()
 
 
 	def action_delete(self):
 
 		if self.pos >= len(self.buffer): return
 		self.buffer = self.buffer[:self.pos] + self.buffer[self.pos + 1:]
-		self.set_cached_column()
-		self.adjust_scroll_row()
-		self.modified = True
-		self.message = ""
+		self.modify()
 
 
 	def action_tab(self):
 
 		self.buffer = self.buffer[:self.pos] + "\t" + self.buffer[self.pos:]
 		self.pos += 1
-		self.set_cached_column()
-		self.adjust_scroll_row()
-		self.modified = True
-		self.message = ""
+		self.modify()
 
 
 	def action_write(self):

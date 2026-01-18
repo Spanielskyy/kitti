@@ -1,0 +1,14 @@
+{
+	"ext": [
+		".py",
+		".pyi"
+	],
+	"tokens": {
+		"keyword": {
+			"match": "(import|if|elif|else|is|in|for|try|except|finally|match|case|raise|assert)"
+		},
+		"string": {
+			"match": "(\"[^\"]*\"|'[^|]*')"
+		}
+	}
+}

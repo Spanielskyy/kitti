@@ -27,6 +27,21 @@ def app(screen : curses.window):
 
 	workspace = editor.Workspace(PATH)
 
+	LANG_THEMES = {}
+	if workspace.lang:
+
+		n = 1
+		for token_id in workspace.lang_data.get("tokens", {}).keys():
+
+			fg = editor.config.theme.get(f"lang.{workspace.lang}.{token_id}.fg", editor.config.theme.get(f"lang.*.{token_id}.fg", editor.config.theme.get("kitti.fg")))
+			bg = editor.config.theme.get(f"lang.{workspace.lang}.{token_id}.bg", editor.config.theme.get(f"lang.*.{token_id}.bg", editor.config.theme.get("kitti.bg")))
+
+			curses.init_pair(2 + n, fg, bg)
+			LANG_THEMES[token_id] = curses.color_pair(2 + n)
+			n += 1
+
+	pregenerate = False
+
 
 	while True:
 
@@ -34,6 +49,13 @@ def app(screen : curses.window):
 		workspace.scroll_size_x = w
 		workspace.scroll_size_y = h - 2
 		screen.clear()
+
+		if not pregenerate:
+			for row in range(workspace.scroll_size_y):
+				workspace.generate_tokens(row)
+				editor.log(f"{row} {workspace.tokens.get(row)}")
+			pregenerate = True
+			continue
 
 		CENTER_LEN = len(workspace.bar_center)
 		RIGHT_LEN = len(workspace.bar_right)
@@ -54,6 +76,14 @@ def app(screen : curses.window):
 			row = workspace.rows[row_id]
 			row = row.replace("\t", " " * editor.config.config.get("tab-size", 4))
 			screen.addstr(y, 0, row)
+
+
+		for token_row, tokens in workspace.tokens.items():
+			for token in tokens:
+
+				tabcount = workspace.rows[token.row][:token.column].count("\t")
+				screen.addstr(token_row - workspace.scroll_row, token.column - workspace.scroll_column + tabcount * (editor.config.config.get("tab-size", 4) - 1), token.value, LANG_THEMES.get(token.id))
+
 
 		cursor_row, cursor_column = workspace.pos_to_rc(workspace.pos)
 		if cursor_row != None and cursor_column != None:

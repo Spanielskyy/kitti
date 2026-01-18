@@ -1,5 +1,496 @@
-Wrote buffer successfully (24 characters, 24B) WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+<class 'builtin_function_or_method'> <class 'builtin_function_or_method'>
  WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
  WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'keyword': 512, 'string': 512}
  WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+keyword 0 15
+string 0 15
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 12}
+keyword 0 15
+string 0 15
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 12}
+FALLBACKS 'lang.*.keyword.fg'
+keyword 0 15
+FALLBACKS 'lang.*.string.fg'
+string 0 15
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 12}
+FALLBACKS 'lang.*.keyword.fg'
+keyword 0 0
+FALLBACKS 'lang.*.string.fg'
+string 0 0
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 12}
+FALLBACKS 'lang.*.keyword.fg' 12
+keyword 0 15
+FALLBACKS 'lang.*.string.fg' None
+string 0 15
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 9}
+FALLBACKS 'lang.*.keyword.fg' 9
+keyword 0 15
+FALLBACKS 'lang.*.string.fg' None
+string 0 15
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 9}
+FALLBACKS 'lang.*.keyword.fg' 9
+keyword -1 -1
+FALLBACKS 'lang.*.string.fg' None
+string -1 -1
+{'keyword': 512, 'string': 512}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': -1, 'lang.*.keyword.fg': 9}
+FALLBACKS 'lang.*.keyword.fg' 9
+keyword -1 -1
+FALLBACKS 'lang.*.string.fg' None
+string -1 -1
+{'keyword': 768, 'string': 768}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 768}
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+256 {'keyword': 768, 'string': 768}
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768
+FINDING FOR string: 768
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768
+FINDING FOR string: 1024
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaHello nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaHello nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaHello nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaHello nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+keyword -1 -1
+string -1 -1
+256 {'keyword': 512, 'string': 768}
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellao nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellaao nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellaaao nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellaaaao nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellaaaao nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Hellaaaao nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': 4, 'lang.*.keyword.fg': 9} 9
+keyword -1 -1
+string -1 -1
+256 {'keyword': 512, 'string': 768}
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helalo nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helaalo nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helaaalo nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helaaaalo nigga!"'
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helaaaalo nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 512 'in'
+FINDING FOR string: 768 '"Helaaaalo nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': 4, 'lang.*.keyword.fg': 9} 9
+keyword -1 -1
+string -1 -1
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaaHello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaaHello nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"aaaaaaHello nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+{'kitti.bg': -1, 'kitti.fg': -1, 'kitti.bar.bg': 15, 'kitti.bar.fg': 0, 'lang.*.keyword.bg': 15, 'lang.*.keyword.fg': 9} 9
+keyword -1 -1
+string -1 -1
+256 {'keyword': 768, 'string': 1024}
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Hello nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Heallo nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Heaallo nigga!"'
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Heaallo nigga!"'
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+FINDING FOR keyword: 768 'in'
+FINDING FOR string: 1024 '"Heaallo nigga!"'
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. True
+0 [<syntax.Token object at 0x7f9d7828a900>]
+1 []
+2 [<syntax.Token object at 0x7f9d782791d0>, <syntax.Token object at 0x7f9d782796d0>]
+3 []
+4 [<syntax.Token object at 0x7f9d782dbbb0>, <syntax.Token object at 0x7f9d782dbce0>]
+5 []
+6 []
+7 []
+8 []
+9 []
+10 [<syntax.Token object at 0x7f9d78126690>]
+11 []
+12 [<syntax.Token object at 0x7f9d7815e360>]
+13 []
+14 []
+15 []
+16 []
+17 []
+18 []
+19 []
+20 []
+21 []
+22 []
+23 []
+24 []
+25 []
+26 []
+27 []
+28 []
+29 []
+30 []
+31 []
+32 []
+33 []
+34 []
+35 []
+36 []
+37 []
+38 []
+39 []
+40 []
+41 []
+42 []
+43 []
+44 []
+45 []
+46 []
+47 []
+48 []
+49 []
+50 []
+51 []
+52 []
+53 []
+54 []
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+0 [Token(keyword, 0, 0, 'import')]
+1 []
+2 [Token(keyword, 2, 2, 'in'), Token(string, 2, 6, '"Hello nigga!"')]
+3 []
+4 [Token(keyword, 4, 12, 'in'), Token(keyword, 4, 21, 'in')]
+5 []
+6 []
+7 []
+8 []
+9 []
+10 [Token(keyword, 10, 7, 'in')]
+11 []
+12 [Token(keyword, 12, 7, 'is')]
+13 []
+14 []
+15 []
+16 []
+17 []
+18 []
+19 []
+20 []
+21 []
+22 []
+23 []
+24 []
+25 []
+26 []
+27 []
+28 []
+29 []
+30 []
+31 []
+32 []
+33 []
+34 []
+35 []
+36 []
+37 []
+38 []
+39 []
+40 []
+41 []
+42 []
+43 []
+44 []
+45 []
+46 []
+47 []
+48 []
+49 []
+50 []
+51 []
+52 []
+53 []
+54 []
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+0 [Token(keyword, 0, 0, 'import')]
+1 []
+2 [Token(string, 2, 6, '"Hello nigga!"')]
+3 []
+4 []
+5 []
+6 []
+7 []
+8 []
+9 []
+10 []
+11 []
+12 []
+13 []
+14 []
+15 []
+16 []
+17 []
+18 []
+19 []
+20 []
+21 []
+22 []
+23 []
+24 []
+25 []
+26 []
+27 []
+28 []
+29 []
+30 []
+31 []
+32 []
+33 []
+34 []
+35 []
+36 []
+37 []
+38 []
+39 []
+40 []
+41 []
+42 []
+43 []
+44 []
+45 []
+46 []
+47 []
+48 []
+49 []
+50 []
+51 []
+52 []
+53 []
+54 []
+ WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
+0 [Token(keyword, 0, 0, 'import')]
+1 []
+2 [Token(keyword, 2, 2, 'in'), Token(string, 2, 6, '"Hello nigga!"')]
+3 []
+4 [Token(keyword, 4, 12, 'in'), Token(keyword, 4, 21, 'in')]
+5 []
+6 []
+7 []
+8 []
+9 []
+10 [Token(keyword, 10, 7, 'in')]
+11 []
+12 [Token(keyword, 12, 7, 'is')]
+13 []
+14 []
+15 []
+16 []
+17 []
+18 []
+19 []
+20 []
+21 []
+22 []
+23 []
+24 []
+25 []
+26 []
+27 []
+28 []
+29 []
+30 []
+31 []
+32 []
+33 []
+34 []
+35 []
+36 []
+37 []
+38 []
+39 []
+40 []
+41 []
+42 []
+43 []
+44 []
+45 []
+46 []
+47 []
+48 []
+49 []
+50 []
+51 []
+52 []
+53 []
+54 []
  WARNING: Buffer was modified, but not written. `Mod+x` to exit anyway. False
